@@ -35,3 +35,10 @@ export type ModifiedAxiosInstance = Omit<
 		config?: AxiosRequestConfig
 	) => Promise<R> & Promise<Latency>;
 };
+
+export interface RpcResponse {
+	result: {
+		number?: number;
+	};
+}
+export type FetchChainResponse = (RpcResponse & Latency) | Event;
